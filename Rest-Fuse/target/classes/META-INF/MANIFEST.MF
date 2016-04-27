@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Export-Package: org.jboss.quickstarts.fuse.rest;uses:="javax.xml.bind.
+ annotation,javax.annotation,javax.ws.rs,com.wordnik.swagger.annotatio
+ ns,org.apache.cxf.jaxrs.ext,org.slf4j,javax.ws.rs.core"
+Implementation-Title: JBoss Fuse :: Examples :: RESTful WebService
+Built-By: hnaram
+Tool: Bnd-1.15.0
+Implementation-Vendor: Red Hat
+Implementation-Vendor-Id: org.jboss.quickstarts.fuse
+Embed-Transitive: false
+Specification-Title: JBoss Fuse :: Examples :: RESTful WebService
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.html
+Bundle-SymbolicName: org.jboss.quickstarts.fuse.rest
+Implementation-Version: 6.1.0.redhat-379
+Specification-Vendor: Red Hat
+Bundle-Name: JBoss Fuse :: Examples :: RESTful WebService
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Red Hat
+Bundle-Version: 6.1.0.redhat-379
+Build-Jdk: 1.7.0_91
+Bnd-LastModified: 1461727868062
+Bundle-ManifestVersion: 2
+Bundle-Description: RESTful WebService Example using JAX-RS with JBoss
+  Fuse
+Specification-Version: 6.1.0.redhat-379
+Embed-Dependency: !*
+Bundle-DocURL: http://fabric.fusesource.org/
+Import-Package: com.fasterxml.jackson.annotation;version="[2.3,3)";res
+ olution:=optional,com.fasterxml.jackson.core;version="[2.3,3)";resolu
+ tion:=optional,com.fasterxml.jackson.databind;version="[2.3,3)";resol
+ ution:=optional,com.fasterxml.jackson.jaxrs.json;version="[2.0,3)";re
+ solution:=optional,com.wordnik.swagger.annotations;resolution:=option
+ al,com.wordnik.swagger.jaxrs.config;resolution:=optional,com.wordnik.
+ swagger.jaxrs.listing;resolution:=optional,javax.annotation,javax.ws.
+ rs;version="[2.0,3)",javax.ws.rs.core;version="[2.0,3)",javax.ws.rs.e
+ xt;version="[2.0,3)",javax.xml.bind.annotation,org.apache.cxf.jaxrs.e
+ xt;version="[2.7,3)",org.apache.cxf.jaxrs.swagger;version="[2.7,3)",o
+ rg.osgi.service.blueprint;version="[1.0.0,2.0.0)",org.slf4j;version="
+ [1.6,2)"
+
