@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camel="http://camel.apache.org/schema/blueprint"
+    xmlns:cxf="http://camel.apache.org/schema/blueprint/cxf"
+    xsi:schemaLocation="
+       http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint/cxf http://camel.apache.org/schema/blueprint/cxf/camel-cxf.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+ 
+    <cxf:rsServer id="restEndpoint" address="http://localhost:9001/rest"
+        serviceClass="com.redhat.Endpoint" />
+ 
+    <camelContext trace="false" id="blueprintContext"
+        xmlns="http://camel.apache.org/schema/blueprint">
+ 
+        <route>
+            <from uri="cxfrs:bean:restEndpoint" />
+      <log message="The id contains ${header.id}!!"/>
+      <setBody>
+        <constant>this is a  response</constant>
+      </setBody>
+    </route>
+  </camelContext>
+
+</blueprint>
