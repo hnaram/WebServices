@@ -1,19 +1,9 @@
 Hi,
 
-The project when deployed at my end gave the same error.
-
-On Second thoughts, It would best if we deploy the webservice in bundle packaging and using blueprint xml file.
-
-Refer [1] which also conveys the same
-
-It may be possible to deploy a war but would take additional configuration. Let me know if it is fine to have a bundle deployment or is it a strict requirement to have a WAR deployment.
-
-I have attached a TestCase (rest-cxf-example.zip) which would be deployed easily on JBoss Fuse 6.2.0.
-
-Inside the zip you would see 
 
 --------------------------------------------------------------------------------------------------------------
 ├── pom.xml
+├── readme.md
 └── src
     └── main
         ├── java
@@ -21,15 +11,17 @@ Inside the zip you would see
         │       └── redhat
         │           └── UserService.java
         └── resources
-            └── OSGI-INF
-                └── blueprint
-                    └── blueprint.xml
+            └── META-INF
+                └── spring
+                    └── spring-context.xml
+
+
 
 --------------------------------------------------------------------------------------------------------------
 
 UserService.java: is our rest service.
 
-blueprint.xml: Has the required configuration for hosting the webservice
+spring-context.xml: Has the required configuration for hosting the webservice
 
 To deploy this project at your end.
 
