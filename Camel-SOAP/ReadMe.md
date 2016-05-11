@@ -1,3 +1,10 @@
+Links used
+----------
+
+https://dzone.com/articles/exposing-and-consuming-soap
+
+http://marcelojabali.blogspot.com.au/2011/07/calling-web-services-with-apache-camel.html
+
 There are two parts to implement in this project
 
 1. JBoss EAP
