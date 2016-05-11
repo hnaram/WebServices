@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://sample.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sam:sum>
+         <arg0>2</arg0>
+         <arg1>3</arg1>
+      </sam:sum>
+   </soapenv:Body>
+</soapenv:Envelope>
