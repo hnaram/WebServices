@@ -19,7 +19,7 @@ Steps
 
 This TestCase contains a json files inside the "/src/data" and "/src/data2"
 
-.
+<code>
 ├── pom.xml
 ├── readme.md
 └── src
@@ -41,7 +41,7 @@ This TestCase contains a json files inside the "/src/data" and "/src/data2"
                     └── camel-context.xml
 
 7 directories, 12 files
-
+</code>
 
 
 
