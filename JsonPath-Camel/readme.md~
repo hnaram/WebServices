@@ -1,0 +1,22 @@
+Links used
+==========
+
+
+http://camel.apache.org/jsonpath.html
+
+http://goessner.net/articles/JsonPath/index.html#e2
+
+http://www.baeldung.com/guide-to-jayway-jsonpath
+
+Steps
+====
+
+
+1. mvn clean install 
+
+2. mvn camel:run
+
+
+This TestCase contains a json files inside the "/src/data" and "/src/data2"
+
+
