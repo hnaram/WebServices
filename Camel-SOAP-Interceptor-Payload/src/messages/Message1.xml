@@ -1,0 +1,4 @@
+<sam:sum xmlns:sam="http://sample.com/">
+         <arg0>2</arg0>
+         <arg1>3</arg1>
+</sam:sum>

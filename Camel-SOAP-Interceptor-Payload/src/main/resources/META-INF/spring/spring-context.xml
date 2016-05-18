@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:cxf="http://camel.apache.org/schema/cxf"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
+       http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf.xsd
+       http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+
+
+	<cxf:cxfEndpoint id="JBossWSEndpoint"
+		address="http://localhost:8080/MySoapWebService-0.0.1-SNAPSHOT" serviceName="s:MathWS"
+		endpointName="s:MathWSPort" wsdlURL="src/main/resources/wsdl/math.wsdl"
+		xmlns:s="http://sample.com/">
+                <cxf:inInterceptors>
+			<ref bean="TestIntercep"/>
+		</cxf:inInterceptors>
+
+                <cxf:outInterceptors>
+			<ref bean="headerInterceptor"/>
+		</cxf:outInterceptors>
+       </cxf:cxfEndpoint>
+
+
+<bean id="TestIntercep"
+		class="com.redhat.TestIntercep" />       
+
+<bean id="headerInterceptor"
+		class="com.redhat.HeadersInterceptor" />       
+
+
+<camelContext xmlns="http://camel.apache.org/schema/spring" trace="false">
+    <route id="my_Sample_Camel_Route_with_CXF">
+        <from uri="file://src/messages?noop=true"/>
+         <to uri="cxf:bean:JBossWSEndpoint?dataFormat=PAYLOAD&amp;defaultOperationName=sum&amp;defaultOperationNamespace=http://sample.com/&amp;loggingFeatureEnabled=true"/>    
+          <log loggingLevel="INFO" message="&gt;&gt;&gt; ${body}"/>
+        </route>
+</camelContext>
+
+</beans>
+
+
+
