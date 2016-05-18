@@ -1,3 +1,10 @@
+Links used
+===========
+
+http://www.mastertheboss.com/javaee/jboss-web-services/apache-cxf-interceptors?showall=
+
+
+
 There are two parts to implement in this project
 
 1. JBoss EAP
