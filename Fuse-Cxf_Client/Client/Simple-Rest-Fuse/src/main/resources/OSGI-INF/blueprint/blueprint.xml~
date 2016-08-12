@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:camel="http://camel.apache.org/schema/blueprint"
+    xmlns:cxf="http://camel.apache.org/schema/blueprint/cxf"
+    xsi:schemaLocation="
+       http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+       http://camel.apache.org/schema/blueprint/cxf http://camel.apache.org/schema/blueprint/cxf/camel-cxf.xsd
+       http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+	
+<bean id="requestProcessor" class="com.redhat.RequestProcessor"/>
+<camelContext trace="false" xmlns="http://camel.apache.org/schema/blueprint">
+    <route>
+        <from uri="timer://foo?period=5000"/>
+         <setBody>
+            <constant>helloworld</constant>
+        </setBody>
+         <process ref="requestProcessor"/>
+        <log message="${body}"/>
+    </route>
+</camelContext>   
+
+<cxf:rsClient id="rsClient" address="http://localhost:8080/RESTEasyExample/rest/"  serviceClass="com.redhat.UserService" loggingFeatureEnabled="true"/>
+
+</blueprint>
